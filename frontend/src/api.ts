@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export async function getAll(collection: string) {
     const res = await axios.get(`${API_URL}/${collection}`);

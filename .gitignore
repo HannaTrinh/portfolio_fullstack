@@ -1,3 +1,20 @@
+# Backend
 backend/config.env
+backend/node_modules/
+
+# Frontend
+frontend/.env
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# General
 .env
+*.env
 node_modules/
+.DS_Store
+*.log
+
+# IDEs
+.vscode/
+.idea/
