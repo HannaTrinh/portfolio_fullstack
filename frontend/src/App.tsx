@@ -1,29 +1,18 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import './App.css'
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Home, About, Projects, Contact } from "./pages";
 
-function App() {
-  const [name, setName] = useState();
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        console.log('Fetching data...');
-        const response = await axios.get('http://localhost:5000/posts');
-        console.log('Response:', response);
-        setName(response.data[0].name);
-        console.log('Name:', response.data[0].name);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-    fetchData();
-  }, []);
-
+const App = () => {
   return (
-    <>
-    {JSON.stringify(name)}
-    </>
+    <main>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </Router>
+    </main>
   )
 }
 
