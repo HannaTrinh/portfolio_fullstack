@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+@import "tailwindcss";
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+}
+
+@theme {
+    --font-spline-sans-mono: "Spline Sans Mono", monospace; 
+}
+
+@layer utilities {
+    .header {
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+  }
+}
